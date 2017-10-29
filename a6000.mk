@@ -15,29 +15,18 @@
 # Inherit Full Phone.
 $(call inherit-product, device/lenovo/a6000/full_a6000.mk)
 
-# Inherit some common AOSP stuff.
-$(call inherit-product, vendor/pa/common.mk)
-
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := Kraft-T,a6000,K30-T,A6000,Kraft-W,Kraft-C,k30t,msm8916,Kraft-A6000,wt86518
-
-PRODUCT_NAME := pa_a6000
-BOARD_VENDOR := Lenovo
-
-# Build fingerprint
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT="Lenovo/Kraft-A6000/Kraft-A6000:5.0.2/LRX22G/Kraft-A6000_S061_160727:user/release-keys" \
-    PRIVATE_BUILD_DESC="Kraft-A6000-user 5.0.2 LRX22G Kraft-A6000_S061_160727 release-keys"
-
-PRODUCT_GMS_CLIENTID_BASE := android-lenovo
-
-# Build Magisk.
-DEFAULT_ROOT_METHOD := magisk
-
 # Include Bootanimation configuration
-TARGET_BOOT_ANIMATION_RES := 720
 TARGET_BOOTANIMATION_PRELOAD 	     := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE   := true
+
+LOCAL_PATH := device/lenovo/a6000
+
+DEVICE_PACKAGE_OVERLAYS := \
+   $(LOCAL_PATH)/overlay
+
+$(call inherit-product, device/lenovo/msm8916-common/BoardConfigCommon.mk)
+
+$(call inherit-product, vendor/lenovo/a6000/a6000-vendor.mk)
