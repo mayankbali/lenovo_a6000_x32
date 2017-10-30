@@ -26,6 +26,9 @@ PRODUCT_MANUFACTURER := Lenovo
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
 
+# Inherit from a6000 device
+$(call inherit-product, device/lenovo/a6000/device.mk)
+
 # Include Bootanimation configuration
 TARGET_BOOTANIMATION_PRELOAD 	     := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE   := true
