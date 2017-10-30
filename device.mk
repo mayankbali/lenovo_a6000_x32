@@ -17,6 +17,9 @@
 # Inherit from msm8916-common
 $(call inherit-product, device/lenovo/msm8916-common/msm8916.mk)
 
+# Inherit from a6000 device
+$(call inherit-product, device/lenovo/a6000/device.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
