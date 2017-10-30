@@ -12,8 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit Full Phone.
-$(call inherit-product, device/lenovo/a6000/full_a6000.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit from a6000 device
+$(call inherit-product, device/lenovo/a6000/device.mk)
+
+# Device identifier. This must come after all inclusions
+TARGET_VENDOR := Lenovo
+PRODUCT_DEVICE := a6000
+PRODUCT_NAME := full_a6000
+PRODUCT_BRAND := Lenovo
+PRODUCT_MODEL := A6000
+PRODUCT_MANUFACTURER := Lenovo
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8916
