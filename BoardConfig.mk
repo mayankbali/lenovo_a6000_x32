@@ -18,6 +18,8 @@ TW_INCLUDE_CRYPTO := true
 
 DEVICE_PATH := device/lenovo/a6000
 
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
 include device/lenovo/msm8916-common/BoardConfigCommon.mk
 
 include device/lenovo/a6000/board/*.mk
