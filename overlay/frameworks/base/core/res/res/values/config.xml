@@ -141,7 +141,11 @@
           May be less than the minimum allowed brightness setting
           that can be set by the user. -->
     <integer name="config_screenBrightnessDoze">3</integer>
+ 
 
+   <integer
+      name="config_longPressOnAppSwitchBehavior">8</integer>
+  		  
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
          try to start this dream if possible.  The dream should typically call startDozing()
@@ -155,21 +159,7 @@
     <!-- If true, the doze component is not started until after the screen has been
           turned off and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOff">true</bool>
-
-
-    <!-- Default list of files pinned by the Pinner Service -->
-    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
-        <item>"/system/framework/arm/boot-framework.oat"</item>
-        <item>"/system/framework/oat/arm/services.odex"</item>
-        <item>"/system/framework/arm/boot.oat"</item>
-        <item>"/system/framework/arm/boot-core-libart.oat"</item>
-        <item>"/data/dalvik-cache/arm/system@framework@boot.oat"</item>
-        <item>"/data/dalvik-cache/arm/system@framework@services.jar@classes.dex"</item>
-   </string-array>
-
-    <!-- Configuration to support SIM contact batch operation.-->
-    <bool name="config_sim_phonebook_batch_operation">false</bool>
-
+ 
     <!-- enabling WifiDisplay(Miracast Source)-->
     <bool name="config_enableWifiDisplay">true</bool>
 
